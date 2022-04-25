@@ -204,74 +204,63 @@ console.log("Dishes with chickpeas: ", dishesChickpea)
 ////6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 ////Map
 
-//function italianMexicanOnly() {
-//    let newArray = dishes.map(function (element) {
-//        if (element.cuisine == 'Italian') {
-//            return element.cuisine;
-//        }
-//        else if (element.cuisine == 'Mexican') {
-//            return element.cuisine;
-//        }
-//    })
-//    return newArray;
-//}
-//let newerArray = italianMexicanOnly()
-//console.log(newerArray)
-
 function italianMexicanOnly() {
-    let newArray = dishes.map(function (element) {
-        if (element.cuisine == 'Italian') {
-            return element.name;
-        }
-        else if (element.cuisine == 'Mexican') {
-            return element.name;
-        }
+    let cuisineArray = dishes.map(function (element) {
+        return element.cuisine;
     })
-    return newArray;
+    return cuisineArray;
 }
-let newestArray = italianMexicanOnly()
-console.log(newestArray)
+let firstArray = italianMexicanOnly()
+console.log('Cuisine only first: ', firstArray)
 //// BONUS: (come back to this after finishing all)
 ////6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
-//function problemSixb() {
-//}
 
+function italianMexicanOnlyTw0() {
+    let newArray = dishes.map(function (element) {
+        return element.cuisine;
+    })
+    let newerArray = ['', '', '',]; 
+    let uniqueCharacters = [...new Set(newArray)];
+    return uniqueCharacters;
+}
+let noDuplicates = italianMexicanOnlyTw0()
+console.log("BONUS No Duplicates:", noDuplicates)
 
 ////7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 ////Map
 //function problemSeven() {
 //}
 
-function newDishNames() {
-    let result = dishes.map(function (el) {
-        return el.cuisine +" "+ el.name;
-    })
-    return result;
-}
-let cuisineTypeName = newDishNames()
-console.log("Cuisine type then name:  ",cuisineTypeName)
-
-////8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
-////Map, Filter
-//function problemEight() {
+//function newDishNames() {
+//    let result = dishes.map(function (el) {
+//        return el.cuisine +" "+ el.name;
+//    })
+//    return result;
 //}
+//let cuisineTypeName = newDishNames()
+//console.log("Cuisine type then name:  ",cuisineTypeName)
 
-function newDishNamesCuisine() {
-    let resultStageOne = dishes.map(function (el) {
-        return el.cuisine + ' ' + el.name;
-    })
-    let resultStageTwo = resultStageOne.filter(function (element) {
-        if (element.includes('Vegetarian')) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    })
-    return resultStageTwo;
-}
-let newDish = newDishNamesCuisine()
-console.log(newDish)
+//////8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
+//////Map, Filter
+////function problemEight() {
+////}
+
+//function newDishNamesCuisine() {
+//    let resultStageOne = dishes.map(function (el) {
+//        return el.cuisine + ' ' + el.name;
+//    })
+//    let resultStageTwo = resultStageOne.filter(function (element) {
+//        if (element.includes('Vegetarian')) {
+//            return true;
+//        }
+//        else {
+//            return false;
+//        }
+//    })
+//    return resultStageTwo;
+//}
+//let newDish = newDishNamesCuisine()
+//console.log(newDish)
 
 //BONUS
 //5. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
