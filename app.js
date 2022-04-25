@@ -258,7 +258,7 @@ console.log("Cuisine type then name:  ",cuisineTypeName)
 
 function newDishNamesCuisine() {
     let resultStageOne = dishes.map(function (el) {
-        return el.cuisine + '' + el.name;
+        return el.cuisine + ' ' + el.name;
     })
     let resultStageTwo = resultStageOne.filter(function (element) {
         if (element.includes('Vegetarian')) {
