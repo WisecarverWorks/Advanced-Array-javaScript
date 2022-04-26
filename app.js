@@ -218,8 +218,7 @@ console.log('Cuisine only first: ', firstArray)
 function italianMexicanOnlyTw0() {
     let newArray = dishes.map(function (element) {
         return element.cuisine;
-    })
-    let newerArray = ['', '', '',]; 
+    }) // Found how to make a new Set which will take duplicates away. JavaScriptTutorial.net
     let uniqueCharacters = [...new Set(newArray)];
     return uniqueCharacters;
 }
@@ -283,5 +282,15 @@ console.log(printNames)
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
 
+function additionServingSize() {
+    let totalServingSizes = dishes.map(function (element) {
+        if (element.servings != 0) {
+            return element.servings[1] + [2];
+        }
+    })
+    return totalServingSizes;
+}
+let newScore = additionServingSize()
+console.log(newScore)
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
